@@ -46,9 +46,9 @@ export function SiteFooter() {
                 </a>
               </li>
               <li>
-                <a href="https://github.com/sponsors/KofLang" className="hover:text-primary" target="_blank" rel="noreferrer">
-                  GitHub Sponsors
-                </a>
+                <Link to="/apoiar" className="hover:text-primary">
+                  Doações e patrocínio
+                </Link>
               </li>
             </ul>
           </div>
