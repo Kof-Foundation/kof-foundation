@@ -10,7 +10,7 @@ export default defineConfig(async ({ mode }: ConfigEnv): Promise<UserConfig> => 
   const isDevelopmentMode = mode === "development";
   const isPagesBuild = process.env["GITHUB_PAGES"] === "true";
   const repoName = process.env["GITHUB_REPOSITORY"]?.split("/")[1];
-  const githubPagesBase = repoName ? `/${repoName}/` : "/";
+  const githubPagesBase = repoName && !repoName.endsWith(".github.io") ? `/${repoName}/` : "/";
   const routes = ["/", "/projetos", "/apoiar", "/apoiadores", "/enviar-projeto", "/contato"];
   const plugins: PluginOption[] = [];
 
