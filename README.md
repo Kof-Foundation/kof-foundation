@@ -1,14 +1,18 @@
-# Welcome to your Lovable project
+# Kof Foundation
+
+seguinte, eu ja tenho o site https://koflang.github.io/ e o repositorio https://github.com/KofLang/Kof4j 
+
+quero um site chamado the kof foundation pra ser a frente de vitrine dos projetos e inovação do kof, como uma frente comercial. ele que vai receber doações e incentivos da comunidade
 
 This project was built with [Lovable](https://lovable.dev).
 
 ## Build with Lovable
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/96f22975-7701-4d0e-bfd6-2307da8fbf8f).
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 
@@ -20,10 +24,3 @@ cd <repository-name>
 npm i
 npm run dev
 ```
-
-## Built with
-
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
