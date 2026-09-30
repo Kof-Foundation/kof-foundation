@@ -20,7 +20,7 @@ export const Route = createFileRoute("/apoiar")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
-  component: Apoiar;
+  component: Apoiar,
 });
 
 const channels = [
