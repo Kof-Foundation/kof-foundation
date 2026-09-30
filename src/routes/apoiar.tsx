@@ -32,8 +32,8 @@ const channels = [
     name: "GitHub Sponsors",
     description:
       "Apoio recorrente mensal, direto na plataforma onde o código vive. Ideal para desenvolvedores.",
-    href: null,
-    cta: "Perfil aguardando aprovação",
+    href: "https://github.com/sponsors/KofLang",
+    cta: "Apoiar pelo GitHub Sponsors",
     featured: true,
   },
   {
