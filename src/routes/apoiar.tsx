@@ -204,6 +204,16 @@ function Apoiar() {
             </Card>
           ))}
         </div>
+        <div className="mt-6 border-y border-primary/40 bg-surface px-6 py-7 text-center sm:px-8">
+          <p className="label-mono">Apoio livre</p>
+          <p className="mt-2 text-2xl font-bold text-gradient-ember">
+            Ou doe o quanto puder
+          </p>
+          <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground">
+            Toda contribuição ajuda a manter o Kof livre e em evolução, sem valor mínimo nem
+            compromisso mensal.
+          </p>
+        </div>
       </Section>
 
       <Section eyebrow="Transparência" title="Para onde vai o dinheiro">
