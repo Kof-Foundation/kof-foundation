@@ -1,5 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Check, Copy, ExternalLink, QrCode } from "lucide-react";
+import { useState } from "react";
+import { QRCodeSVG } from "qrcode.react";
 import { Card, PageHero, Section } from "@/components/page-shell";
+import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/apoiar")({
   head: () => ({
@@ -29,26 +33,20 @@ const channels = [
     description:
       "Apoio recorrente mensal, direto na plataforma onde o código vive. Ideal para desenvolvedores.",
     href: null,
-    cta: "Link do Sponsors a definir",
+    cta: "Perfil aguardando aprovação",
     featured: true,
   },
   {
     name: "Ko-fi",
     description:
       "Uma doação única, do tamanho de um café. Sem cadastro e sem compromisso.",
-    href: null,
-    cta: "Link do Ko-fi a definir",
-    featured: false,
-  },
-  {
-    name: "Pix",
-    description:
-      "Para quem está no Brasil: transferência direta, sem taxa de intermediário.",
-    href: null,
-    cta: "Chave Pix a definir",
+    href: "https://ko-fi.com/kof4j",
+    cta: "Apoiar pelo Ko-fi",
     featured: false,
   },
 ];
+
+const pixKey = "51.839.682/0001-61";
 
 const tiers = [
   {
@@ -77,6 +75,19 @@ const tiers = [
 ];
 
 function Apoiar() {
+  const [showPix, setShowPix] = useState(false);
+  const [copyStatus, setCopyStatus] = useState<"idle" | "copied" | "error">("idle");
+
+  async function copyPixKey() {
+    try {
+      await navigator.clipboard.writeText(pixKey);
+      setCopyStatus("copied");
+      window.setTimeout(() => setCopyStatus("idle"), 2500);
+    } catch {
+      setCopyStatus("error");
+    }
+  }
+
   return (
     <>
       <PageHero
@@ -101,18 +112,12 @@ function Apoiar() {
                 {c.description}
               </p>
               {c.href ? (
-                <a
-                  href={c.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className={`mt-5 block rounded-md px-4 py-2.5 text-center font-mono text-xs font-semibold transition-opacity hover:opacity-90 ${
-                    c.featured
-                      ? "bg-gradient-ember text-primary-foreground"
-                      : "border border-border text-foreground"
-                  }`}
-                >
-                  {c.cta}
-                </a>
+                <Button asChild variant="outline" className="mt-5 w-full font-mono text-xs">
+                  <a href={c.href} target="_blank" rel="noreferrer">
+                    {c.cta}
+                    <ExternalLink aria-hidden="true" />
+                  </a>
+                </Button>
               ) : (
                 <p className="mt-5 rounded-md border border-dashed border-border px-4 py-2.5 text-center font-mono text-xs text-muted-foreground">
                   {c.cta}
@@ -120,7 +125,66 @@ function Apoiar() {
               )}
             </Card>
           ))}
+
+          <Card className={showPix ? "border-primary/50" : ""}>
+            <h3 className="text-lg font-bold">Pix</h3>
+            <p className="mt-3 min-h-20 text-sm leading-relaxed text-muted-foreground">
+              Para quem está no Brasil: transferência direta, sem taxa de intermediário.
+            </p>
+            <Button
+              type="button"
+              variant={showPix ? "secondary" : "outline"}
+              className="mt-5 w-full font-mono text-xs"
+              aria-expanded={showPix}
+              aria-controls="pix-details"
+              onClick={() => {
+                setShowPix((current) => !current);
+                setCopyStatus("idle");
+              }}
+            >
+              <QrCode aria-hidden="true" />
+              {showPix ? "Ocultar Pix" : "Ver QR Code e chave"}
+            </Button>
+          </Card>
         </div>
+
+        {showPix && (
+          <div
+            id="pix-details"
+            className="mt-6 grid gap-6 border-y border-border bg-surface px-5 py-7 sm:grid-cols-[auto_1fr] sm:items-center sm:px-8"
+          >
+            <div className="mx-auto rounded-md bg-foreground p-3 sm:mx-0">
+              <QRCodeSVG
+                value={pixKey}
+                size={184}
+                level="H"
+                bgColor="var(--foreground)"
+                fgColor="var(--background)"
+                title="QR Code da chave Pix CNPJ"
+              />
+            </div>
+            <div>
+              <p className="label-mono">Chave Pix · CNPJ</p>
+              <p className="mt-2 break-all font-mono text-xl font-bold text-foreground">{pixKey}</p>
+              <p className="mt-3 max-w-lg text-sm leading-relaxed text-muted-foreground">
+                Escaneie o código ou copie a chave e cole no aplicativo do seu banco.
+              </p>
+              <Button type="button" className="mt-5" onClick={copyPixKey}>
+                {copyStatus === "copied" ? (
+                  <Check aria-hidden="true" />
+                ) : (
+                  <Copy aria-hidden="true" />
+                )}
+                {copyStatus === "copied" ? "Chave copiada" : "Copiar chave Pix"}
+              </Button>
+              {copyStatus === "error" && (
+                <p role="status" className="mt-3 text-sm text-muted-foreground">
+                  Não foi possível copiar automaticamente. Selecione a chave acima para copiar.
+                </p>
+              )}
+            </div>
+          </div>
+        )}
       </Section>
 
       <Section eyebrow="Níveis" title="Reconhecimento por nível">
