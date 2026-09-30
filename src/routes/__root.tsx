@@ -7,12 +7,11 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { SiteHeader } from "../components/site-header";
 import { SiteFooter } from "../components/site-footer";
-import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
   return (
@@ -39,9 +38,6 @@ function NotFoundComponent() {
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
-  useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
-  }, [error]);
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -82,15 +78,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "The Kof Foundation" },
       {
         name: "description",
-        content:
-          "A fundação por trás da linguagem Kof: projetos, inovação, doações e parcerias.",
+        content: "A fundação por trás da linguagem Kof: projetos, inovação, doações e parcerias.",
       },
       { name: "author", content: "The Kof Foundation" },
       { property: "og:title", content: "The Kof Foundation" },
       {
         property: "og:description",
-        content:
-          "A fundação por trás da linguagem Kof: projetos, inovação, doações e parcerias.",
+        content: "A fundação por trás da linguagem Kof: projetos, inovação, doações e parcerias.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -107,7 +101,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:ital,wght@0,400;0,600;1,400&display=swap",
       },
-      { rel: "icon", href: "/favicon.png", type: "image/png" },
+      { rel: "icon", href: `${import.meta.env.BASE_URL}favicon.png`, type: "image/png" },
     ],
   }),
   shellComponent: RootShell,

@@ -17,8 +17,7 @@ export const Route = createFileRoute("/apoiar")({
       { property: "og:title", content: "Apoiar · The Kof Foundation" },
       {
         property: "og:description",
-        content:
-          "Doações da comunidade e patrocínio corporativo para o ecossistema Kof.",
+        content: "Doações da comunidade e patrocínio corporativo para o ecossistema Kof.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -38,8 +37,7 @@ const channels = [
   },
   {
     name: "Ko-fi",
-    description:
-      "Uma doação única, do tamanho de um café. Sem cadastro e sem compromisso.",
+    description: "Uma doação única, do tamanho de um café. Sem cadastro e sem compromisso.",
     href: "https://ko-fi.com/kof4j",
     cta: "Apoiar pelo Ko-fi",
     featured: false,
@@ -103,10 +101,7 @@ function Apoiar() {
       <Section eyebrow="Canais" title="Como apoiar hoje">
         <div className="grid gap-6 md:grid-cols-3">
           {channels.map((c) => (
-            <Card
-              key={c.name}
-              className={c.featured ? "border-primary/50 glow-ember" : ""}
-            >
+            <Card key={c.name} className={c.featured ? "border-primary/50 glow-ember" : ""}>
               <h3 className="text-lg font-bold">{c.name}</h3>
               <p className="mt-3 min-h-20 text-sm leading-relaxed text-muted-foreground">
                 {c.description}
@@ -206,9 +201,7 @@ function Apoiar() {
         </div>
         <div className="mt-6 border-y border-primary/40 bg-surface px-6 py-7 text-center sm:px-8">
           <p className="label-mono">Apoio livre</p>
-          <p className="mt-2 text-2xl font-bold text-gradient-ember">
-            Ou doe o quanto puder
-          </p>
+          <p className="mt-2 text-2xl font-bold text-gradient-ember">Ou doe o quanto puder</p>
           <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground">
             Toda contribuição ajuda a manter o Kof livre e em evolução, sem valor mínimo nem
             compromisso mensal.

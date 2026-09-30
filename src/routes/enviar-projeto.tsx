@@ -34,9 +34,9 @@ function EnviarProjeto() {
     descricao: "",
   });
 
-  const set = (key: keyof typeof form) => (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => setForm((f) => ({ ...f, [key]: e.target.value }));
+  const set =
+    (key: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
+      setForm((f) => ({ ...f, [key]: e.target.value }));
 
   const issueUrl = () => {
     const body = [
@@ -62,8 +62,7 @@ function EnviarProjeto() {
         eyebrow="Vitrine aberta"
         title={
           <>
-            Envie seu projeto feito em{" "}
-            <span className="text-gradient-ember">Kof</span>
+            Envie seu projeto feito em <span className="text-gradient-ember">Kof</span>
           </>
         }
         description="Biblioteca, ferramenta, jogo, experimento ou app em produção — se roda em Kof, cabe na vitrine. Preencha os campos e revise o envio no GitHub antes de confirmar."
@@ -138,19 +137,37 @@ function EnviarProjeto() {
             <div className="rounded-lg border border-border bg-surface p-6">
               <p className="label-mono">Critérios</p>
               <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
-                <li className="flex gap-2"><span className="text-primary">›</span> Usa Kof de forma real, nem que seja em parte</li>
-                <li className="flex gap-2"><span className="text-primary">›</span> Tem link público que qualquer pessoa consegue abrir</li>
-                <li className="flex gap-2"><span className="text-primary">›</span> Descrição clara do que faz</li>
-                <li className="flex gap-2"><span className="text-primary">›</span> Código aberto ou produto com página pública</li>
+                <li className="flex gap-2">
+                  <span className="text-primary">›</span> Usa Kof de forma real, nem que seja em
+                  parte
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-primary">›</span> Tem link público que qualquer pessoa
+                  consegue abrir
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-primary">›</span> Descrição clara do que faz
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-primary">›</span> Código aberto ou produto com página
+                  pública
+                </li>
               </ul>
             </div>
 
             <div className="rounded-lg border border-border bg-surface p-6">
               <p className="label-mono">O que você ganha</p>
               <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
-                <li className="flex gap-2"><span className="text-primary">›</span> Espaço na vitrine da fundação</li>
-                <li className="flex gap-2"><span className="text-primary">›</span> Divulgação nos canais do Kof</li>
-                <li className="flex gap-2"><span className="text-primary">›</span> Feedback técnico de quem escreve o compilador</li>
+                <li className="flex gap-2">
+                  <span className="text-primary">›</span> Espaço na vitrine da fundação
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-primary">›</span> Divulgação nos canais do Kof
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-primary">›</span> Feedback técnico de quem escreve o
+                  compilador
+                </li>
               </ul>
             </div>
           </div>

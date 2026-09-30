@@ -1,26 +1,51 @@
 # Kof Foundation
 
-seguinte, eu ja tenho o site https://koflang.github.io/ e o repositorio https://github.com/KofLang/Kof4j 
+A frente institucional do ecossistema [Kof](https://koflang.github.io/) — uma linguagem, um compilador, vários mundos. O site é a vitrine dos projetos e da inovação do Kof e o canal por onde a fundação recebe doações e incentivos da comunidade.
 
-quero um site chamado the kof foundation pra ser a frente de vitrine dos projetos e inovação do kof, como uma frente comercial. ele que vai receber doações e incentivos da comunidade
+- Site da linguagem: https://koflang.github.io/
+- Compilador: https://github.com/KofLang/Kof4j
+- Doações e patrocínio: página `/apoiar`
+- Apoiadores e parcerias: página `/apoiadores`
 
-This project was built with [Lovable](https://lovable.dev).
+## Stack
 
-## Build with Lovable
+- [TanStack Start](https://tanstack.com/start) (React + roteamento por arquivos)
+- [TanStack Router](https://tanstack.com/router)
+- [Vite](https://vite.dev/) + [Nitro](https://nitro.build/)
+- [Tailwind CSS](https://tailwindcss.com/) v4
+- TypeScript
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/96f22975-7701-4d0e-bfd6-2307da8fbf8f).
+## Desenvolvimento
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+Requer [Bun](https://bun.sh/). Para instalar as dependências e subir o servidor de desenvolvimento:
 
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
+bun install
+bun run dev
 ```
+
+O servidor sobe em `http://localhost:8080`.
+
+## Scripts
+
+| Comando             | Descrição                   |
+| ------------------- | --------------------------- |
+| `bun run dev`       | Servidor de desenvolvimento |
+| `bun run build`     | Build de produção           |
+| `bun run build:dev` | Build em modo development   |
+| `bun run preview`   | Pré-visualiza o build       |
+| `bun run lint`      | Roda o ESLint               |
+| `bun run format`    | Formata com Prettier        |
+
+## Rotas
+
+- `/` — início
+- `/projetos` — vitrine dos projetos
+- `/apoiar` — doações e patrocínio
+- `/apoiadores` — empresas e pessoas que apoiam
+- `/enviar-projeto` — envio de projetos da comunidade
+- `/contato` — contato e parcerias
+
+## Licença
+
+GPLv3.

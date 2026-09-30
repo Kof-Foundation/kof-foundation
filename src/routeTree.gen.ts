@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ApoiadoresRouteImport } from './routes/apoiadores'
 import { Route as ApoiarRouteImport } from './routes/apoiar'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as EnviarProjetoRouteImport } from './routes/enviar-projeto'
@@ -18,6 +19,11 @@ import { Route as ProjetosRouteImport } from './routes/projetos'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApoiadoresRoute = ApoiadoresRouteImport.update({
+  id: '/apoiadores',
+  path: '/apoiadores',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApoiarRoute = ApoiarRouteImport.update({
@@ -43,6 +49,7 @@ const ProjetosRoute = ProjetosRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/apoiadores': typeof ApoiadoresRoute
   '/apoiar': typeof ApoiarRoute
   '/contato': typeof ContatoRoute
   '/enviar-projeto': typeof EnviarProjetoRoute
@@ -50,6 +57,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/apoiadores': typeof ApoiadoresRoute
   '/apoiar': typeof ApoiarRoute
   '/contato': typeof ContatoRoute
   '/enviar-projeto': typeof EnviarProjetoRoute
@@ -58,6 +66,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/apoiadores': typeof ApoiadoresRoute
   '/apoiar': typeof ApoiarRoute
   '/contato': typeof ContatoRoute
   '/enviar-projeto': typeof EnviarProjetoRoute
@@ -65,15 +74,34 @@ export interface FileRoutesById {
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/apoiar' | '/contato' | '/enviar-projeto' | '/projetos'
+  fullPaths:
+    | '/'
+    | '/apoiadores'
+    | '/apoiar'
+    | '/contato'
+    | '/enviar-projeto'
+    | '/projetos'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/apoiar' | '/contato' | '/enviar-projeto' | '/projetos'
+  to:
+    | '/'
+    | '/apoiadores'
+    | '/apoiar'
+    | '/contato'
+    | '/enviar-projeto'
+    | '/projetos'
   id:
-    '__root__' | '/' | '/apoiar' | '/contato' | '/enviar-projeto' | '/projetos'
+    | '__root__'
+    | '/'
+    | '/apoiadores'
+    | '/apoiar'
+    | '/contato'
+    | '/enviar-projeto'
+    | '/projetos'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ApoiadoresRoute: typeof ApoiadoresRoute
   ApoiarRoute: typeof ApoiarRoute
   ContatoRoute: typeof ContatoRoute
   EnviarProjetoRoute: typeof EnviarProjetoRoute
@@ -87,6 +115,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/apoiadores': {
+      id: '/apoiadores'
+      path: '/apoiadores'
+      fullPath: '/apoiadores'
+      preLoaderRoute: typeof ApoiadoresRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/apoiar': {
@@ -122,6 +157,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ApoiadoresRoute: ApoiadoresRoute,
   ApoiarRoute: ApoiarRoute,
   ContatoRoute: ContatoRoute,
   EnviarProjetoRoute: EnviarProjetoRoute,

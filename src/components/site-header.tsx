@@ -1,11 +1,13 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import logo from "@/assets/kof-logo.png";
+import { GoogleTranslate } from "./google-translate";
 
 const nav = [
   { to: "/", label: "Início" },
   { to: "/projetos", label: "Projetos" },
   { to: "/apoiar", label: "Apoiar" },
+  { to: "/apoiadores", label: "Apoiadores" },
   { to: "/enviar-projeto", label: "Envie seu projeto" },
   { to: "/contato", label: "Contato" },
 ] as const;
@@ -18,9 +20,7 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-6xl items-center gap-6 px-5 py-4 sm:px-8">
         <Link to="/" className="flex items-center gap-3">
           <img src={logo} alt="Kof" className="h-7 w-auto" />
-          <span className="font-mono text-xs font-bold tracking-[0.28em]">
-            THE KOF FOUNDATION
-          </span>
+          <span className="font-mono text-xs font-bold tracking-[0.28em]">THE KOF FOUNDATION</span>
         </Link>
 
         <nav className="ml-auto hidden items-center gap-1 lg:flex">
@@ -52,6 +52,10 @@ export function SiteHeader() {
         >
           {open ? "fechar" : "menu"}
         </button>
+
+        <div className="tp-translate-wrap">
+          <GoogleTranslate />
+        </div>
       </div>
 
       {open && (

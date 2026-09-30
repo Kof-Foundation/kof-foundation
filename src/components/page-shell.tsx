@@ -38,9 +38,7 @@ export function Section({
   return (
     <section className={`mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20 ${className}`}>
       {eyebrow && <p className="label-mono">{eyebrow}</p>}
-      {title && (
-        <h2 className="mt-3 text-2xl font-bold tracking-tight sm:text-3xl">{title}</h2>
-      )}
+      {title && <h2 className="mt-3 text-2xl font-bold tracking-tight sm:text-3xl">{title}</h2>}
       <div className={eyebrow || title ? "mt-8" : ""}>{children}</div>
     </section>
   );

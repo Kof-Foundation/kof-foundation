@@ -66,12 +66,9 @@
   --ember: oklch(0.68 0.18 35);
   --ember-foreground: oklch(0.97 0.01 80);
 
-  --gradient-ember: linear-gradient(
-    135deg,
-    oklch(0.78 0.145 72) 0%,
-    oklch(0.64 0.18 35) 100%
-  );
-  --glow-ember: 0 0 0 1px oklch(0.78 0.145 72 / 0.25), 0 18px 60px -20px oklch(0.78 0.145 72 / 0.45);
+  --gradient-ember: linear-gradient(135deg, oklch(0.78 0.145 72) 0%, oklch(0.64 0.18 35) 100%);
+  --glow-ember:
+    0 0 0 1px oklch(0.78 0.145 72 / 0.25), 0 18px 60px -20px oklch(0.78 0.145 72 / 0.45);
   --grid-line: oklch(1 0 0 / 0.045);
 }
 
@@ -120,4 +117,48 @@
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--color-muted-foreground);
+}
+
+/* Google Translate widget, restyled to match the dark technical theme. */
+.tp-translate-wrap {
+  margin-left: 0.5rem;
+  line-height: 1;
+}
+
+.goog-te-gadget {
+  font-size: 0;
+  color: transparent;
+}
+
+.goog-te-gadget .goog-te-combo {
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-foreground);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  margin: 0;
+  padding: 0.3rem 0.4rem;
+  max-width: 7.5rem;
+  cursor: pointer;
+}
+
+.goog-te-gadget .goog-te-combo:hover {
+  border-color: var(--color-primary);
+}
+
+.goog-te-banner-frame,
+.goog-te-balloon-frame,
+#goog-gt-tt,
+#goog-gt-vt {
+  display: none !important;
+}
+
+body {
+  top: 0 !important;
+}
+
+.goog-text-highlight {
+  background: none !important;
+  box-shadow: none !important;
 }

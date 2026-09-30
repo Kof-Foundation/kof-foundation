@@ -88,9 +88,7 @@ function Projetos() {
                 </span>
               </div>
               <p className="mt-1 font-mono text-xs text-muted-foreground">{p.tagline}</p>
-              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                {p.description}
-              </p>
+              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{p.description}</p>
               <a
                 href={p.link}
                 target="_blank"
@@ -122,9 +120,7 @@ function Projetos() {
 
       <Section>
         <div className="rounded-xl border border-border bg-surface p-10 text-center">
-          <h2 className="text-2xl font-bold tracking-tight">
-            Construiu algo com Kof?
-          </h2>
+          <h2 className="text-2xl font-bold tracking-tight">Construiu algo com Kof?</h2>
           <p className="mx-auto mt-3 max-w-lg text-sm text-muted-foreground">
             Mande seu projeto para aparecer nesta vitrine.
           </p>

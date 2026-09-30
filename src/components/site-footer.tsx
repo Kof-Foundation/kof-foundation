@@ -14,8 +14,8 @@ export function SiteFooter() {
               </span>
             </div>
             <p className="mt-4 max-w-sm text-sm text-muted-foreground">
-              A frente institucional do ecossistema Kof — uma linguagem, um
-              compilador, vários mundos. Software livre sob GPLv3.
+              A frente institucional do ecossistema Kof — uma linguagem, um compilador, vários
+              mundos. Software livre sob GPLv3.
             </p>
             <p className="mt-6 font-mono text-xs italic text-muted-foreground">
               i'm always opensource — so the whole world can use me
@@ -25,10 +25,31 @@ export function SiteFooter() {
           <div>
             <p className="label-mono">Fundação</p>
             <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-              <li><Link to="/projetos" className="hover:text-primary">Projetos</Link></li>
-              <li><Link to="/apoiar" className="hover:text-primary">Apoiar</Link></li>
-              <li><Link to="/enviar-projeto" className="hover:text-primary">Envie seu projeto</Link></li>
-              <li><Link to="/contato" className="hover:text-primary">Contato e parcerias</Link></li>
+              <li>
+                <Link to="/projetos" className="hover:text-primary">
+                  Projetos
+                </Link>
+              </li>
+              <li>
+                <Link to="/apoiar" className="hover:text-primary">
+                  Apoiar
+                </Link>
+              </li>
+              <li>
+                <Link to="/apoiadores" className="hover:text-primary">
+                  Apoiadores
+                </Link>
+              </li>
+              <li>
+                <Link to="/enviar-projeto" className="hover:text-primary">
+                  Envie seu projeto
+                </Link>
+              </li>
+              <li>
+                <Link to="/contato" className="hover:text-primary">
+                  Contato e parcerias
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -36,12 +57,22 @@ export function SiteFooter() {
             <p className="label-mono">Ecossistema</p>
             <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
               <li>
-                <a href="https://koflang.github.io/" className="hover:text-primary" target="_blank" rel="noreferrer">
+                <a
+                  href="https://koflang.github.io/"
+                  className="hover:text-primary"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   koflang.github.io
                 </a>
               </li>
               <li>
-                <a href="https://github.com/KofLang/Kof4j" className="hover:text-primary" target="_blank" rel="noreferrer">
+                <a
+                  href="https://github.com/KofLang/Kof4j"
+                  className="hover:text-primary"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   GitHub · Kof4j
                 </a>
               </li>

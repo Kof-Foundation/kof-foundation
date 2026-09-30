@@ -62,10 +62,9 @@ function Home() {
               <span className="text-gradient-ember">Vários mundos.</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
-              A The Kof Foundation é a frente institucional por trás do Kof —
-              linguagem moderna, estaticamente tipada, compilada para JVM,
-              nativo, script e web. Sustentamos o compilador, as ferramentas e
-              as pessoas que constroem em cima deles.
+              A The Kof Foundation é a frente institucional por trás do Kof — linguagem moderna,
+              estaticamente tipada, compilada para JVM, nativo, script e web. Sustentamos o
+              compilador, as ferramentas e as pessoas que constroem em cima deles.
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
               <Link
@@ -85,11 +84,7 @@ function Home() {
 
           <div className="relative flex justify-center">
             <div className="absolute inset-0 rounded-full bg-gradient-ember opacity-15 blur-3xl" />
-            <img
-              src={logo}
-              alt="Logo do Kof"
-              className="relative w-48 sm:w-64"
-            />
+            <img src={logo} alt="Logo do Kof" className="relative w-48 sm:w-64" />
           </div>
         </div>
       </section>
@@ -112,25 +107,24 @@ function Home() {
             <p className="font-mono text-xs text-primary">sustentar</p>
             <h3 className="mt-3 text-lg font-semibold">Manter o compilador vivo</h3>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-              Infraestrutura, releases, testes e documentação custam tempo. A
-              fundação garante que o Kof continue evoluindo em ritmo próprio,
-              sem depender de um único mantenedor.
+              Infraestrutura, releases, testes e documentação custam tempo. A fundação garante que o
+              Kof continue evoluindo em ritmo próprio, sem depender de um único mantenedor.
             </p>
           </Card>
           <Card>
             <p className="font-mono text-xs text-primary">acelerar</p>
             <h3 className="mt-3 text-lg font-semibold">Impulsionar inovação</h3>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-              Novos backends, ferramentas e experimentos de linguagem nascem
-              aqui — e viram projetos abertos que qualquer pessoa pode usar.
+              Novos backends, ferramentas e experimentos de linguagem nascem aqui — e viram projetos
+              abertos que qualquer pessoa pode usar.
             </p>
           </Card>
           <Card>
             <p className="font-mono text-xs text-primary">conectar</p>
             <h3 className="mt-3 text-lg font-semibold">Aproximar comunidade e empresas</h3>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-              Uma frente comercial clara para patrocínios, parcerias e adoção
-              corporativa, sem fechar o código.
+              Uma frente comercial clara para patrocínios, parcerias e adoção corporativa, sem
+              fechar o código.
             </p>
           </Card>
         </div>
@@ -140,22 +134,21 @@ function Home() {
         <div className="grid gap-10 lg:grid-cols-[1.1fr_1fr]">
           <div>
             <p className="text-base leading-relaxed text-muted-foreground">
-              Kof é <strong className="text-foreground">orientado a intenção</strong>:
-              o código expressa <em>o que</em> quer, e a plataforma — linguagem,
-              compilador, runtime e stdlib — decide <em>como</em>, por alvo e por
-              convenção.
+              Kof é <strong className="text-foreground">orientado a intenção</strong>: o código
+              expressa <em>o que</em> quer, e a plataforma — linguagem, compilador, runtime e stdlib
+              — decide <em>como</em>, por alvo e por convenção.
             </p>
             <pre className="mt-6 overflow-x-auto rounded-lg border border-border bg-surface p-5 font-mono text-sm text-primary">
-{`intenção → Kof → compilador → backend`}
+              {`intenção → Kof → compilador → backend`}
             </pre>
             <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
-              Você escreve <code className="font-mono text-primary">spawn task()</code>{" "}
-              e não <code className="font-mono">Thread</code>;{" "}
-              <code className="font-mono text-primary">app.get("/users/:id")</code>{" "}
-              e não um contêiner de servlets;{" "}
-              <code className="font-mono text-primary">json.decode&lt;User&gt;(body)</code>{" "}
-              e não um parser manual. Quando um alvo não consegue cumprir a
-              intenção, ele avisa em tempo de compilação — nunca em silêncio.
+              Você escreve <code className="font-mono text-primary">spawn task()</code> e não{" "}
+              <code className="font-mono">Thread</code>;{" "}
+              <code className="font-mono text-primary">app.get("/users/:id")</code> e não um
+              contêiner de servlets;{" "}
+              <code className="font-mono text-primary">json.decode&lt;User&gt;(body)</code> e não um
+              parser manual. Quando um alvo não consegue cumprir a intenção, ele avisa em tempo de
+              compilação — nunca em silêncio.
             </p>
           </div>
 
@@ -175,7 +168,7 @@ function Home() {
 
       <Section eyebrow="Arquitetura" title="Do fonte ao alvo">
         <pre className="overflow-x-auto rounded-lg border border-border bg-surface p-6 font-mono text-xs leading-relaxed text-muted-foreground sm:text-sm">
-{`Source (.kf)
+          {`Source (.kf)
   ↓ Lexer
   ↓ Parser
   ↓ AST
@@ -193,14 +186,13 @@ function Home() {
           <img src={mascot} alt="Mascote do Kof, uma civeta" className="mx-auto w-56" />
           <div>
             <p className="text-base leading-relaxed text-muted-foreground">
-              O mascote do Kof é uma <strong className="text-foreground">civeta</strong> —
-              também chamada de gato-de-almíscar, o felino que come café. Nada
-              mais adequado para uma linguagem que se pronuncia{" "}
-              <em className="text-primary">coffe</em>.
+              O mascote do Kof é uma <strong className="text-foreground">civeta</strong> — também
+              chamada de gato-de-almíscar, o felino que come café. Nada mais adequado para uma
+              linguagem que se pronuncia <em className="text-primary">coffe</em>.
             </p>
             <p className="mt-4 font-mono text-xs italic leading-relaxed text-muted-foreground">
-              i'm always opensource / so the whole world can use me / so i can
-              build a better world / and draw with all my Koffies
+              i'm always opensource / so the whole world can use me / so i can build a better world
+              / and draw with all my Koffies
             </p>
           </div>
         </div>
@@ -213,8 +205,8 @@ function Home() {
             Construa com a gente
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground">
-            Doações, patrocínio corporativo ou seu próprio projeto feito em Kof —
-            todo apoio empurra o ecossistema para frente.
+            Doações, patrocínio corporativo ou seu próprio projeto feito em Kof — todo apoio empurra
+            o ecossistema para frente.
           </p>
           <div className="mt-7 flex flex-wrap justify-center gap-3">
             <Link
