@@ -204,9 +204,6 @@ function Apoiar() {
             </Card>
           ))}
         </div>
-        <p className="mt-6 font-mono text-xs text-muted-foreground">
-          Valores e benefícios são uma proposta inicial — ajuste antes de divulgar.
-        </p>
       </Section>
 
       <Section eyebrow="Transparência" title="Para onde vai o dinheiro">
