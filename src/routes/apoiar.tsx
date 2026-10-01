@@ -4,6 +4,7 @@ import { useState } from "react";
 import { QRCodeSVG } from "qrcode.react";
 import { Card, PageHero, Section } from "@/components/page-shell";
 import { Button } from "@/components/ui/button";
+import { buildPixPayload } from "@/lib/pix";
 
 export const Route = createFileRoute("/apoiar")({
   head: () => ({
@@ -46,6 +47,13 @@ const channels = [
 
 const pixKey = "51.839.682/0001-61";
 
+const pixPayload = buildPixPayload({
+  key: pixKey,
+  name: "THE KOF FOUNDATION",
+  city: "SAO PAULO",
+  txid: "KOFDONATION",
+});
+
 const tiers = [
   {
     name: "Koffie",
@@ -78,7 +86,7 @@ function Apoiar() {
 
   async function copyPixKey() {
     try {
-      await navigator.clipboard.writeText(pixKey);
+      await navigator.clipboard.writeText(pixPayload);
       setCopyStatus("copied");
       window.setTimeout(() => setCopyStatus("idle"), 2500);
     } catch {
@@ -150,19 +158,20 @@ function Apoiar() {
           >
             <div className="mx-auto rounded-md bg-foreground p-3 sm:mx-0">
               <QRCodeSVG
-                value={pixKey}
+                value={pixPayload}
                 size={184}
-                level="H"
+                level="M"
                 bgColor="var(--foreground)"
                 fgColor="var(--background)"
-                title="QR Code da chave Pix CNPJ"
+                title="QR Code Pix (BR Code) da The Kof Foundation"
               />
             </div>
             <div>
               <p className="label-mono">Chave Pix · CNPJ</p>
               <p className="mt-2 break-all font-mono text-xl font-bold text-foreground">{pixKey}</p>
               <p className="mt-3 max-w-lg text-sm leading-relaxed text-muted-foreground">
-                Escaneie o código ou copie a chave e cole no aplicativo do seu banco.
+                Escaneie o QR Code com o app do banco ou copie o código Pix (copia e cola) e cole na
+                opção “Pix Copia e Cola”.
               </p>
               <Button type="button" className="mt-5" onClick={copyPixKey}>
                 {copyStatus === "copied" ? (
@@ -170,7 +179,7 @@ function Apoiar() {
                 ) : (
                   <Copy aria-hidden="true" />
                 )}
-                {copyStatus === "copied" ? "Chave copiada" : "Copiar chave Pix"}
+                {copyStatus === "copied" ? "Código copiado" : "Copiar código Pix"}
               </Button>
               {copyStatus === "error" && (
                 <p role="status" className="mt-3 text-sm text-muted-foreground">
