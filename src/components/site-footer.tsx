@@ -77,6 +77,11 @@ export function SiteFooter() {
                 </a>
               </li>
               <li>
+                <a href="mailto:koflang@bsdmail.com" className="hover:text-primary">
+                  koflang@bsdmail.com
+                </a>
+              </li>
+              <li>
                 <Link to="/apoiar" className="hover:text-primary">
                   Doações e patrocínio
                 </Link>

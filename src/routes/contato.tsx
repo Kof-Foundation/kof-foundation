@@ -72,9 +72,14 @@ function Contato() {
 
         <div className="mt-10 rounded-lg border border-dashed border-border p-6">
           <p className="label-mono">E-mail</p>
+          <a
+            href="mailto:koflang@bsdmail.com"
+            className="mt-2 inline-block font-mono text-lg font-semibold text-primary hover:underline"
+          >
+            koflang@bsdmail.com
+          </a>
           <p className="mt-2 text-sm text-muted-foreground">
-            A fundação ainda não tem um e-mail institucional publicado aqui. Me diga qual endereço
-            usar e eu coloco nesta página.
+            Para patrocínio, parcerias, imprensa ou qualquer assunto institucional da fundação.
           </p>
         </div>
       </Section>
